@@ -42,7 +42,7 @@ Testing on docker can be done by running `docker build . --tag ringleader` and `
 See here for more help: https://docs.iex.ec/for-developers/quick-start-for-developers
 
 * `npm i -g iexec` (install iexec cli)
-* `cd` to a directory you want to store iExec files in. This will not be the same as the directory you make your project in. It will reference your project through Docker Hub.
+* `cd` to a directory you want to store iExec files in. This will not be the same as the directory you make your project in. It will reference your project through Docker Hub. (Here is the repository I use for this: https://github.com/jamesgrams/ringleader-dapp)
 * `iexec wallet create` (install a wallet for iExec if you don't have one already)
 * Get some test Ethereum here: https://goerli-faucet.slock.it/.
 * `iexec wallet show --chain goerli` (check wallet funds using the goerli test net)
