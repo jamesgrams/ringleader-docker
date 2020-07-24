@@ -43,19 +43,19 @@ See here for more help: https://docs.iex.ec/for-developers/quick-start-for-devel
 
 * `npm i -g iexec` (install iexec cli)
 * `cd` to a directory you want to store iExec files in. This will not be the same as the directory you make your project in. It will reference your project through Docker Hub. (Here is the repository I use for this: https://github.com/jamesgrams/ringleader-dapp)
-* `iexec wallet create` (install a wallet for iExec if you don't have one already)
+* `iexec wallet create` (install a wallet for iExec if you don't have one already) or `iexec wallet import <private_key>` to use the wallet you already have.
 * Get some test Ethereum here: https://goerli-faucet.slock.it/.
 * `iexec wallet show --chain goerli` (check wallet funds using the goerli test net)
 * `iexec storage init --chain goerli`
 * `iexec account show --chain goerli` (you can publish to `mainnet` if you don't want to use the goerli test chain)
 * `iexec app init` (init app)
 * Make sure the name, multiaddr, and checksum are correct in the `iexec.json` file (https://docs.iex.ec/for-developers/your-first-app#deploy-your-app-on-iexec). **
-* `iexec app deploy --chain goerli` (deploy app to the goerli blockchain) **
+* `iexec app deploy --chain goerli` (deploy app to the goerli blockchain - this costs ethereum) **
 * `iexec app show --chain goerli` (view your app)
 * `iexec wallet getRLC --chain goerli` (get RLC tokens to run your app)
 * `iexec account deposit 200 --chain goerli` (place RLC tokens from your wallet into your account - this is necessary to run)
 * `iexec app run --input-files=<url to javascript> --watch --chain goerli` (run the app from public code)
-* `iexec app run --dataset=<dataset address> --watch --chain goerli` (use a confidential dataset to run - note: dataset will take precendence over input files)
+* `iexec app run --dataset=<dataset address> --watch --chain goerli` (use a confidential dataset to run - note: dataset will take precendence over input files - this costs rlc)
     * To learn how to upload a dataset to the blockchain which can then be used by iExec, see here: https://docs.iex.ec/for-developers/confidential-computing/sgx-encrypted-dataset
     * To learn how to encrypt the result, see here: https://docs.iex.ec/for-developers/confidential-computing/end-to-end-encryption
 * `iexec task show <0x-your-task-id> --download --chain goerli` Download task results.
