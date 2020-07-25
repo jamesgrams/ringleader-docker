@@ -51,7 +51,7 @@ See here for more help: https://docs.iex.ec/for-developers/quick-start-for-devel
 * `iexec app init` (init app)
 * Make sure the name, multiaddr, and checksum are correct in the `iexec.json` file (https://docs.iex.ec/for-developers/your-first-app#deploy-your-app-on-iexec). **
 * `iexec app deploy --chain goerli` (deploy app to the goerli blockchain - this costs ethereum) **
-* `iexec app publish [adress]` **
+* `iexec app publish [address]` ** (You may want to unpublish the last version you had)
 * `iexec app show --chain goerli` (view your app)
 * `iexec wallet getRLC --chain goerli` (get RLC tokens to run your app)
 * `iexec account deposit 200 --chain goerli` (place RLC tokens from your wallet into your account - this is necessary to run)
