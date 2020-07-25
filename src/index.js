@@ -12,6 +12,10 @@ const IEXEC_OUT = process.env.IEXEC_OUT;
 const IEXEC_IN = process.env.IEXEC_INPUT_FILES_FOLDER; //process.env.IEXEC_IN;
 // It would be nice to support datasets so confidential information could be included in the job.
 const IEXEC_INPUT_FILE = process.env.DATASET_FILENAME ? process.env.DATASET_FILENAME : process.env.IEXEC_INPUT_FILE_NAME_1;
+const IEXEC_PROOF_OF_EXECUTION_FILE = "computed.json";
+const IEXEC_PROOF_OF_EXECUTION_RESULTS_FILE = "ringleader_final_results.txt";
+const IEXEC_PROOF_OF_EXECUTION_FILE_CONTENTS = JSON.stringify({"deterministic-output-path" : process.env.IEXEC_OUT + "/" + IEXEC_PROOF_OF_EXECUTION_RESULTS_FILE });
+const IEXEC_PROOF_OF_EXECUTION_RESULTS_FILE_CONTENTS = "task completed";
 
 /**
  * Main script to run.
@@ -61,6 +65,8 @@ async function run() {
             return fs.readFileSync( IEXEC_OUT + "/" + file ).toString();
         } );
         await page.exposeFunction("ringleaderFinish", function() {
+            fs.writeFileSync(IEXEC_OUT + "/" +IEXEC_PROOF_OF_EXECUTION_RESULTS_FILE, IEXEC_PROOF_OF_EXECUTION_RESULTS_FILE_CONTENTS);
+            fs.writeFileSync(IEXEC_OUT + "/" +IEXEC_PROOF_OF_EXECUTION_FILE, IEXEC_PROOF_OF_EXECUTION_FILE_CONTENTS);
             browser.close();
         });
 
